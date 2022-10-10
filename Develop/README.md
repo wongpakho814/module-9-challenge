@@ -25,9 +25,9 @@ Alice, Bob
 N/A
 
 ## Questions
-GitHub profile link: https://github.com/wongpakho814
+GitHub profile link: https://github.com/wongpakho814<br />
 Contact email: wongpakho814@gmail.com
 
 ## License
-This project uses the mit license
+This project uses the mit license <br />
 License link: https://opensource.org/licenses/MIT

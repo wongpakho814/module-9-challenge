@@ -92,7 +92,7 @@ function renderLicenseSection(license) {
     }
     const link = renderLicenseLink(license);
     return `## License
-This project uses the ${license} license
+This project uses the ${license} license <br />
 License link: ${link}`;
 }
 
@@ -144,7 +144,7 @@ ${data.credits}
 ${data.tests}
 
 ## Questions
-GitHub profile link: https://github.com/${data.username}
+GitHub profile link: https://github.com/${data.username}<br />
 Contact email: ${data.email}
 
 `;
