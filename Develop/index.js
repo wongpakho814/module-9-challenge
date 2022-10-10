@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateContent = require('./utils/generateMarkdown.js');
 const fileName = "README.md";
 
 // TODO: Create an array of questions for user input
@@ -11,16 +12,18 @@ const questions = [
     "The instructions and examples for use: ",
     "Please list the collaborators here: ",
     "Please provide examples on how to run the tests, if any: ",
+    "What is your GitHub username?",
+    "What is your email address for contact use?",
     "Please choose the license used in this project, if any: ",
 ];
 
 // TODO: Create a function to write README file    
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, generateMarkdown(data), (err) =>
+    fs.writeFile(fileName, generateContent.generateMarkdown(data), (err) =>
         err ? console.log(err) : console.log('Successfully created README.md!')
     );
 
-    fs.appendFile(fileName, renderLicenseSection(data.license), (err) =>
+    fs.appendFile(fileName, generateContent.renderLicenseSection(data.license), (err) =>
         err ? console.log(err) : console.log('Successfully appended to README.md!')
     );
 }
@@ -60,9 +63,19 @@ function init() {
                 message: questions[5],
             },
             {
+                type: "input",
+                name: "username",
+                message: questions[6],
+            },
+            {
+                type: "input",
+                name: "email",
+                message: questions[7],
+            },
+            {
                 type: "list",
                 name: "license",
-                message: questions[6],
+                message: questions[8],
                 choices: [
                     "apache-2.0", 
                     "bsl-1.0",
@@ -75,7 +88,6 @@ function init() {
                     "gpl-3.0",
                     "gpl-2.0",
                     "agpl-3.0",
-                    "gpl-3.0",
                     "isc",
                     "mit",
                     "mpl-2.0",
