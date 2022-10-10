@@ -77,6 +77,7 @@ function init() {
                 name: "license",
                 message: questions[8],
                 choices: [
+                    "none",
                     "apache-2.0", 
                     "bsl-1.0",
                     "bsd-3-clause", 
